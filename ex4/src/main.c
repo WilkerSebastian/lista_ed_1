@@ -21,9 +21,15 @@ int main() {
 
     if (result != NULL)
         printf("Chave %d encontrada na árvore.\n", value);
-        
+
     else 
         printf("Chave %d não encontrada na árvore.\n", value);
+
+    remove_recursive(tree, 15);
+    remove_recursive(tree, 7);
+
+    inorder_traversal(tree);
+    printf("\n");
 
     return 0;
 
