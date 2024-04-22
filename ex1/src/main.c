@@ -31,6 +31,11 @@ int main() {
     printf("\n-----------------\n");
     printHeap(vector, length, 0, 0);
 
+    updatePriority(vector, length, 4, 100);
+
+    printf("\n-----------------\n");
+    printHeap(vector, length, 0, 0);
+
     return 0;
 
 }

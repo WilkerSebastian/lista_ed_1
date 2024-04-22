@@ -84,6 +84,9 @@ void updatePriority(int v[], int n, int index, int newValue) {
         // Atualiza o índice para o pai
         index = parentIndex;
     }
+
+    build(v, n);
+
 }
 
 void removeMax(int v[], int *n) {
