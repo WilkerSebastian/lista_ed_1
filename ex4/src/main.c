@@ -31,6 +31,8 @@ int main() {
     inorder_traversal(tree);
     printf("\n");
 
+    destroy_tree(tree);
+
     return 0;
 
 }

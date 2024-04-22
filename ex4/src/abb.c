@@ -82,6 +82,22 @@ No* remove_recursive(No* node, int value) {
 
 }
 
+// Função para destruir a árvore recursivamente
+void destroy_tree(No* node) {
+
+    if (node != NULL) {
+
+        // Destruir subárvore esquerda
+        destroy_tree(node->left);
+        // Destruir subárvore direita
+        destroy_tree(node->right);
+        // Liberar memória do nó atual
+        free(node);
+
+    }
+
+}
+
 // Função para encontrar o nó com o menor valor em uma subárvore
 No* findMinNode(No* node) {
 

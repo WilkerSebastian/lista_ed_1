@@ -12,3 +12,4 @@ void inorder_traversal(No* node);
 No* search_recursive(No* node, int value);
 No* remove_recursive(No* node, int value);
 No* findMinNode(No* node);
+void destroy_tree(No* node);
