@@ -45,3 +45,19 @@ void inorder_traversal(No* node) {
     }
 
 }
+
+// Função de busca recursiva
+No* search_recursive(No* node, int value) {
+
+    // Se a árvore estiver vazia ou a chave for encontrada na raiz
+    if (node == NULL || node->value == value) 
+        return node; 
+    
+    // Se a chave for menor que a chave da raiz, busca na subárvore esquerda
+    if (value < node->value) 
+        return search_recursive(node->left, value);
+    
+    // Se a chave for maior que a chave da raiz, busca na subárvore direita
+    return search_recursive(node->right, value);
+
+}

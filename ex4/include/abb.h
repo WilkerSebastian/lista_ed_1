@@ -9,3 +9,4 @@ typedef struct no {
 No* create(int value);
 No* insert_recursive(No* node, int value);
 void inorder_traversal(No* node);
+No* search_recursive(No* node, int value);

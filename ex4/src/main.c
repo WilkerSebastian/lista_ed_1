@@ -14,7 +14,17 @@ int main() {
 
     inorder_traversal(tree);
     printf("\n");
+
+    int value = 9;
     
+    No* result = search_recursive(tree, value);
+
+    if (result != NULL)
+        printf("Chave %d encontrada na árvore.\n", value);
+        
+    else 
+        printf("Chave %d não encontrada na árvore.\n", value);
+
     return 0;
 
 }
