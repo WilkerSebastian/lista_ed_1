@@ -14,11 +14,17 @@ int main() {
     insert(vector, &length, 20);
     insert(vector, &length, 3);
     insert(vector, &length, 18);
-    
-    build(vector, length);
 
     printf("\n-----------------\n");
     printHeap(vector, length, 0, 0);
+
+    for (int i = 0; i < 3; i++) {
+        
+        removeMax(vector, &length);
+        printf("\n-----------------\n");
+        printHeap(vector, length, 0, 0);
+    
+    }
 
     return 0;
 

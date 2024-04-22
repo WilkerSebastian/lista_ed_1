@@ -49,6 +49,9 @@ void insert(int v[], int *n, int element) {
         i = father;
     }
 
+    // Reconstrói a heap após a inserção
+    build(v, *n);
+
 }
 
 // Função para construir uma heap a partir de um array
@@ -58,6 +61,24 @@ void build(int v[], int n) {
     // Executa heapify em cada nó não folha, de baixo para cima
     for (int i = startIndex; i >= 0; i--) 
         heapify(v, n, i);
+}
+
+void removeMax(int v[], int *n) {
+
+    if (*n == 0) 
+        return;
+
+    // Troca o primeiro elemento valor máximo com o último
+    int temp = v[0];
+    v[0] = v[*n - 1];
+    v[*n - 1] = temp;
+
+    // Decrementa o tamanho da heap
+    (*n)--;
+
+    // Reconstrói a heap após a remoção
+    build(v, *n);
+    
 }
 
 // Função para calcular o índice do filho esquerdo
