@@ -85,7 +85,7 @@ void updatePriority(int v[], int n, int index, int newValue) {
         index = parentIndex;
     }
 
-    build(v, n);
+    heapify(v, n, index);
 
 }
 
@@ -103,8 +103,23 @@ void removeMax(int v[], int *n) {
     (*n)--;
 
     // Reconstrói a heap após a remoção
-    build(v, *n);
+    heapify(v, *n, 0);
 
+}
+
+// Função para extrair o maior valor
+int extractMax(int v[], int *n) {
+    
+    // Se N for menor igual 0 então o vetor é vazio
+    if (*n <= 0)
+        return -1;
+
+    int max = v[0]; // Extrai o valor máximo (o primeiro elemento na heap)
+    v[0] = v[*n - 1]; // Substitui o primeiro elemento pelo último
+    (*n)--; // Reduz o tamanho da heap
+    heapify(v, *n, 0); // Reorganiza a heap
+
+    return max; // Retorna o valor máximo extraído
 }
 
 // Função para calcular o índice do filho esquerdo

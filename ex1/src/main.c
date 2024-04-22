@@ -36,6 +36,13 @@ int main() {
     printf("\n-----------------\n");
     printHeap(vector, length, 0, 0);
 
+    int max = extractMax(vector, &length);
+
+    printf("\nmaior: %d\n", max);
+
+    printf("\n-----------------\n");
+    printHeap(vector, length, 0, 0);
+
     return 0;
 
 }
