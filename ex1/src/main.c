@@ -26,6 +26,11 @@ int main() {
     
     }
 
+    updatePriority(vector, length, 1, 2);
+
+    printf("\n-----------------\n");
+    printHeap(vector, length, 0, 0);
+
     return 0;
 
 }

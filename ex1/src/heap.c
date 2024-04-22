@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "heap.h"
 
 // Função para transformar uma subárvore em uma heap, mantendo a propriedade de heap
@@ -63,6 +64,28 @@ void build(int v[], int n) {
         heapify(v, n, i);
 }
 
+// Função para atualizar prioridade de um elemento
+void updatePriority(int v[], int n, int index, int newValue) {
+    
+    // se o index for menor que 0 ou for maior que tamanho da heap, não faça nada
+    if (index < 0 || index >= n) 
+        return;
+
+    // Atualiza o valor do nó
+    v[index] = newValue;
+
+    // Sift-up do nó atual
+    while (index > 0 && v[parent(index)] < v[index]) {
+        int parentIndex = parent(index);
+        // Troca o nó com seu pai
+        int temp = v[index];
+        v[index] = v[parentIndex];
+        v[parentIndex] = temp;
+        // Atualiza o índice para o pai
+        index = parentIndex;
+    }
+}
+
 void removeMax(int v[], int *n) {
 
     if (*n == 0) 
@@ -78,7 +101,7 @@ void removeMax(int v[], int *n) {
 
     // Reconstrói a heap após a remoção
     build(v, *n);
-    
+
 }
 
 // Função para calcular o índice do filho esquerdo
