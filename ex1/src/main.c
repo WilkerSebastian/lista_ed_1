@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "heap.h"
 
 int main() {
@@ -8,26 +9,17 @@ int main() {
 
     build(vector, length);
 
-    printArray(vector, length);
+    printHeap(vector, length, 0, 0);
 
     insert(vector, &length, 20);
     insert(vector, &length, 3);
     insert(vector, &length, 18);
+    
+    build(vector, length);
 
-    printArray(vector, length);
+    printf("\n-----------------\n");
+    printHeap(vector, length, 0, 0);
 
     return 0;
-
-}
-
-void printArray(int v[], int n) {
-
-    printf("[ ");
-    for (int i = 0; i < n; i++) {
-        
-        printf("%d ", v[i]);
-
-    }
-    printf("]\n");
 
 }

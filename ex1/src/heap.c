@@ -75,3 +75,23 @@ int parent(int index) {
     return (index - 1) / 2;
 
 }
+
+void printSpaces(int count) {
+    for (int i = 0; i < count; ++i) {
+        printf(" ");
+    }
+}
+
+// Função para imprimir a heap como uma árvore
+void printHeap(int v[], int n, int index, int level) {
+    if (index < n) {
+
+        printHeap(v, n, right(index), level + 1); // Imprime o nó direito
+        printSpaces(level * 4); // Espaçamento para alinhar os elementos
+
+        printf("%d\n", v[index]); // Imprime o nó atual
+
+        printHeap(v, n, left(index), level + 1); // Imprime o nó esquerdo
+
+    }
+}
