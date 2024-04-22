@@ -26,6 +26,31 @@ void heapify(int v[], int n, int i) {
     }
 }
 
+// Adiciona o novo elemento ao final do array
+void insert(int v[], int *n, int element) {
+
+    v[*n] = element; 
+    (*n)++; // Incrementa o tamanho do array
+
+    int i = *n - 1; // Índice do novo elemento
+
+    int father = parent(i); // Índice do pai do elemento atual
+
+    // Sift-up do novo elemento até restaurar a propriedade de heap
+    while (i > 0 && v[father] < v[i]) {
+
+        father = parent(i); // Índice do pai do elemento atual
+
+        // Troca o elemento com seu pai
+        int temp = v[i];
+        v[i] = v[father];
+        v[father] = temp;
+        // Atualiza o índice para o pai
+        i = father;
+    }
+
+}
+
 // Função para construir uma heap a partir de um array
 void build(int v[], int n) {
     int startIndex = (n / 2) - 1;  // Índice do último nó não folha
@@ -43,4 +68,10 @@ int left(int index) {
 // Função para calcular o índice do filho direito
 int right(int index) {
     return  2 * index + 2;
+}
+
+int parent(int index) {
+
+    return (index - 1) / 2;
+
 }

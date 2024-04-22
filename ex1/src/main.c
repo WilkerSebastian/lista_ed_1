@@ -8,14 +8,26 @@ int main() {
 
     build(vector, length);
 
+    printArray(vector, length);
+
+    insert(vector, &length, 20);
+    insert(vector, &length, 3);
+    insert(vector, &length, 18);
+
+    printArray(vector, length);
+
+    return 0;
+
+}
+
+void printArray(int v[], int n) {
+
     printf("[ ");
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < n; i++) {
         
-        printf("%d ", vector[i]);
+        printf("%d ", v[i]);
 
     }
     printf("]\n");
-
-    return 0;
 
 }
